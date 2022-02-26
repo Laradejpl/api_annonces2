@@ -22,7 +22,7 @@ mysql.createConnection({
     host: "eu-cdbr-west-02.cleardb.net",// on rentre l'hôte l'adresse url où se trouve la bdd
     user: "bfdd0219ba1478", // identifiant BDD
     password: "f7801402", // le password
-    database: "heroku_519f6908df5c036", // nom de la base de donnée
+    database: "heroku_519f6908df5c036" // nom de la base de donnée
 	//port: 8889
 }).then((db) => {
 	console.log('connecté bdd');
