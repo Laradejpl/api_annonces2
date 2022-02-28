@@ -95,7 +95,7 @@ mysql.createConnection({
 		//si on a pas envoyé de req.files via le front ou que cet objet ne possède aucune propriété
 		if (!req.files || Object.keys(req.files).length === 0) {
 			//on envoi une réponse d'erreur
-	    	 res.json({status: 400, msg: "La photo n'a pas pu être récupérée"});
+	    	 res.json({status: 400, msg: "La photo n'a pas pu être récupérée !"});
 	    }
 	    
 	    //la fonction mv va envoyer l'image dans le dossier que l'on souhaite.
