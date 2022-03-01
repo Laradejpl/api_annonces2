@@ -17,12 +17,12 @@ const cors = require('cors');
 app.use(cors());
 
 app.use(express.static(__dirname + '/public'));
-//mysql://bfdd0219ba1478:f7801402@eu-cdbr-west-02.cleardb.net/heroku_519f6908df5c036?reconnect=true
+
 mysql.createConnection({
-    host: "eu-cdbr-west-02.cleardb.net",// on rentre l'hôte l'adresse url où se trouve la bdd
-    user: "bfdd0219ba1478", // identifiant BDD
-    password: "f7801402", // le password
-    database: "heroku_519f6908df5c036" // nom de la base de donnée
+    host: "db.3wa.io",// on rentre l'hôte l'adresse url où se trouve la bdd
+    user: "jeanphilippelarade", // identifiant BDD
+    password: "22f7b6566a36e62c16e796fd4ad26664", // le password
+    database: "jeanphilippelarade_annonces", // nom de la base de donnée
 	//port: 8889
 }).then((db) => {
 	console.log('connecté bdd');
@@ -31,7 +31,7 @@ mysql.createConnection({
 	}, 10000);
 	
 	app.get("/", (req,res,next)=>{
-	    res.json({status: 200, msg: "Welcome to your annoncesss  API bro!"})
+	    res.json({status: 200, msg: "Welcome to your annonces API bro!"})
 	})
 	
 	//route pour afficher toutes les annonces
@@ -95,7 +95,7 @@ mysql.createConnection({
 		//si on a pas envoyé de req.files via le front ou que cet objet ne possède aucune propriété
 		if (!req.files || Object.keys(req.files).length === 0) {
 			//on envoi une réponse d'erreur
-	    	 res.json({status: 400, msg: "La photo n'a pas pu être récupérée !"});
+	    	 res.json({status: 400, msg: "La photo n'a pas pu être récupérée"});
 	    }
 	    
 	    //la fonction mv va envoyer l'image dans le dossier que l'on souhaite.
@@ -166,3 +166,10 @@ const PORT = process.env.PORT || 9500;
 app.listen(PORT, ()=>{
 	console.log('listening port '+PORT+' all is ok');
 })
+
+
+
+
+
+
+
